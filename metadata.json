@@ -1,0 +1,9 @@
+{
+  "name": "AI Video ",
+  "description": "An elite AI-powered tool for deconstructing viral video content, creating style passports, and generating high-retention scripts.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ]
+}

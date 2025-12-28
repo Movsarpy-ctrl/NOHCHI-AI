@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Аналитик Видео-удержания</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Default Dark Theme */
+            --bg-main: #0a0a0a;
+            --bg-sidebar: #0d0d0d;
+            --bg-card: #111111;
+            --bg-input: #000000;
+            --text-main: #ededed;
+            --text-muted: #9ca3af;
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #2563eb;
+            --pattern-opacity: 0;
+        }
+
+        [data-theme='light'] {
+            --bg-main: #f3f4f6;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --bg-input: #f9fafb;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+            --accent: #2563eb;
+            --pattern-opacity: 0;
+        }
+
+        [data-theme='chechen'] {
+            /* Flag Gradient: Green (65%), White (3%), Red (Rest) */
+            --bg-main: linear-gradient(180deg, #00733E 0%, #00733E 65%, #FFFFFF 65%, #FFFFFF 68%, #E3001B 68%, #E3001B 100%);
+            --bg-sidebar: #004d29;
+            --bg-card: #00331b; /* Dark Green card to support Gold text */
+            --bg-input: #002211;
+            --text-main: #FFD700; /* Gold */
+            --text-muted: #BFA100; /* Muted Gold */
+            --border: #FFD700; /* Gold Border */
+            --accent: #E3001B; /* Red Accent */
+            --pattern-opacity: 1;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-main);
+            background-attachment: fixed;
+            background-size: cover;
+            color: var(--text-main);
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Sidebar Pattern - CSS SVG for the ornamental look */
+        .chechen-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='80' viewBox='0 0 40 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 80C9 80 0 71 0 60C0 49 9 40 20 40C31 40 40 31 40 20C40 9 31 0 20 0C9 0 0 9 0 20' stroke='%23FFD700' stroke-width='3' fill='none'/%3E%3Cpath d='M20 80C31 80 40 71 40 60C40 49 31 40 20 40C9 40 0 31 0 20C0 9 9 0 20 0C31 0 40 9 40 20' stroke='%23FFD700' stroke-width='3' fill='none' opacity='0.5'/%3E%3C/svg%3E");
+            background-size: 30px auto;
+            background-repeat: repeat-y;
+            background-position: center;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-sidebar);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
